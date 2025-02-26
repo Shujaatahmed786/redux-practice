@@ -1,11 +1,12 @@
-import { createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import pizzaReducer from "../reducers/pizzaReducers";
+import userReducer from "../reducers/user";
 
-const store = createStore(
-  pizzaReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = configureStore({
+  reducer: {
+    pizza: pizzaReducer,
+    user: userReducer,
+  },
+});
 
 export default store;
-
-// combine reducers
