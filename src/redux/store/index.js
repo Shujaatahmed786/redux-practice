@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import pizzaReducer from "../reducers/pizzaReducers";
-import userReducer from "../reducers/user";
+
+import reducer from "../reducers/index";
 
 const store = configureStore({
-  reducer: {
-    pizza: pizzaReducer,
-    user: userReducer,
-  },
+  reducer,
 });
+console.log(store.getState());
 
 export default store;
